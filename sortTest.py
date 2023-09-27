@@ -55,7 +55,7 @@ def analyze_runtime(fun, seq):
 results = [["N"] + args.whichsorts]
 
 k = args.sizeMin
-while (k < args.sizeMax):
+while (k <= args.sizeMax):
     for i in range(args.numTrials):
         runtimeResults = {key: 0 for key in args.whichsorts}
         sequence = sequence_generator(args.generator, k)
@@ -67,12 +67,12 @@ while (k < args.sizeMax):
         if ("insertionsort" in args.whichsorts):
             runtimeResults["insertionsort"] += analyze_runtime(insertion_sort, sequence)
 
-        # add avg for this trial size to output summary
-        resultK = [str(k)]
-        for key in runtimeResults:
-            avg = round(runtimeResults[key]/args.numTrials, 16)
-            resultK.append(str(avg))
-        results.append(resultK)
+    # add avg for this trial size to output summary
+    resultK = [str(k)]
+    for key in runtimeResults:
+        avg = round(runtimeResults[key]/args.numTrials, 16)
+        resultK.append(str(avg))
+    results.append(resultK)
 
     k += args.sizeIncr
 
