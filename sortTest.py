@@ -70,7 +70,7 @@ while (k <= args.sizeMax):
     # add avg for this trial size to output summary
     resultK = [str(k)]
     for key in runtimeResults:
-        avg = round(runtimeResults[key]/args.numTrials, 16)
+        avg = round(runtimeResults[key]/args.numTrials, 12)
         resultK.append(str(avg))
     results.append(resultK)
 
