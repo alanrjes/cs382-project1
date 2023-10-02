@@ -3,7 +3,7 @@ import time
 import random
 import time
 
-from quickSort import quick_sort
+from quickSort import quick_sort,partition
 from mergeSort import merge_sort
 from insertionSort import insertion_sort
 
@@ -35,8 +35,7 @@ args = parser.parse_args()
 
 def sequence_generator(gen, k):
     if (gen == "evil"):
-        # ***code for evil sequence generation here***
-        return
+        return list(range(k, 0, -1))
     elif (gen == "ordered"):
         return list(range(0, k))
     else:
