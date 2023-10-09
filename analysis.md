@@ -38,7 +38,7 @@ On larger evil sequences, Merge Sort performs far better than Insertion Sort. Th
 
 ### Conclusions on Sorting Algorithm Comparisons
 
-Based on this data, Quick Sort appears to be the best choice for random sequences, but by far the worst choice for ordered and evil sequences. Merge Sort performs well all around, and is the best choice for evil sequences and for large ordered sequences. Insertion sort performs well on small random and ordered sequences, but poorly on larger data sets, since due to its _O(n\*n)_ runtime increases more steeply than the _O(n log n)_ runtime of Merge Sort and Quick Sort.
+Based on this data, Quick Sort appears to be the best choice for random sequences, but by far the worst choice for ordered and evil sequences. Merge Sort performs well all around, almost as well as Quick Sort on random sequences, and is the best choice for evil sequences and for large ordered sequences. Insertion sort performs well on small random and ordered sequences, but poorly on larger data sets, due to its _O(n\*n)_ runtime increasing more steeply than the _O(n log n)_ runtime of Merge Sort and Quick Sort.
 
 ## Evidence for Evil Generator Runtime
 
