@@ -18,7 +18,7 @@ This anomaly may be due to Python's internal optimization processes allowing Mer
 
 ### Performance on Ordered Sequences
 
-Similarly to the findings of Merge Sort and Insertion Sort's relative performance on random sequences, Insertion Sort perform best on small sequence sizes, but worse as the sequence size increases. Both Merge Sort and Insertion Sort perform significantly better on ordered sequences than random sequences.
+Similarly to the findings of Merge Sort and Insertion Sort's relative performance on random sequences, Insertion Sort perform best on small sequence sizes, but worse as the sequence size increases.
 
 ![Fig 3. Graph comparing Merge Sort and Insertion Sort's performance sorting ordered sequences](https://github.com/alanrjes/cs382-project1/blob/master/graphs/fig3.png)
 
