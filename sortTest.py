@@ -55,8 +55,8 @@ results = [["N"] + args.whichsorts]
 
 k = args.sizeMin
 while (k <= args.sizeMax):
+    runtimeResults = {key: 0 for key in args.whichsorts}
     for i in range(args.numTrials):
-        runtimeResults = {key: 0 for key in args.whichsorts}
         sequence = sequence_generator(args.generator, k)
 
         if ("quicksort" in args.whichsorts):
