@@ -32,4 +32,4 @@ Based on this data, Quick Sort appears to be the best choice for random sequence
 
 ![Fig 5. Graph comparing Quick Sort's performance on Evil and Random Sequences](https://github.com/alanrjes/cs382-project1/blob/master/graphs/fig7.png)
 
-Comparing the runtimes of Quick Sort on the evil and random sequences, we see that it runs significantly slower in _O(n\*n)_ time for the evil sequences and much quicker for random sequences.
+Comparing the runtimes of QuickSort on the evil and random sequences, we see that it runs significantly slower on the evil sequences than on the random sequences. More specifically, we can fit a degree to polynomial and multiply with some constant $c = 1.6$ to create a upper bound of its runtime on evil sequences, so we claim that it runs in _O(n\*n)_ time.
