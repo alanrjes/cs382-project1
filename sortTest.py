@@ -3,6 +3,7 @@ import time
 import random
 import time
 import csv
+import copy
 
 from quickSort import quick_sort
 from mergeSort import merge_sort
@@ -66,9 +67,9 @@ while (k <= args.sizeMax):
         sequence = sequence_generator(args.generator, k)
 
         if ("quicksort" in args.whichsorts):
-            runtimeResults["quicksort"] +=  analyze_runtime(quick_sort, sequence)
+            runtimeResults["quicksort"] +=  analyze_runtime(quick_sort, copy.deepcopy(sequence))
         if ("mergesort" in args.whichsorts):
-            runtimeResults["mergesort"] += analyze_runtime(merge_sort, sequence)
+            runtimeResults["mergesort"] += analyze_runtime(merge_sort, copy.deepcopy(sequence))
         if ("insertionsort" in args.whichsorts):
             runtimeResults["insertionsort"] += analyze_runtime(insertion_sort, sequence)
 
