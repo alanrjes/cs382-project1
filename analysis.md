@@ -16,7 +16,7 @@ Insertion Sort and Merge Sort both perform well on ordered sequences, with Inser
 
 ![Fig 2. Graph comparing each algorithm's performance sorting ordered sequences](https://github.com/alanrjes/cs382-project1/blob/master/graphs/ordered.png)
 
-![Fig 3. Graph comparing Merge Sort and Quick Sort's performance sorting large ordered sequences](https://github.com/alanrjes/cs382-project1/blob/master/graphs/large-ordered.png)
+![Fig 3. Graph comparing Merge Sort and Quick Sort's performance sorting large ordered sequences](https://github.com/alanrjes/cs382-project1/blob/master/graphs/big-ordered.png)
 
 ### Performance on Evil Sequences
 
