@@ -21,7 +21,7 @@ Where the required inputs are integers for:
 - Maximum size of test lists
 - Number of trials done per list size
 
-And the following optional arguments and options can be used to specify which algorithm and/or list generation procedures to test, and to save the output to a .csv file:
+And the following optional arguments can be used to specify which algorithm and/or list generation procedures to test, and to save the output to a .csv file:
 
 - `--whichsorts` MergeSort QuickSort InsertionSort
 - `--generator` Random Ordered Evil
