@@ -42,4 +42,6 @@ Based on this data, Quick Sort appears to be the best choice for random sequence
 
 ## Evidence for Evil Generator Runtime
 
-...
+![Fig 7. Graph comparing Quick Sort's performance on Evil and Random Sequences](https://github.com/alanrjes/cs382-project1/blob/master/graphs/fig7.png)
+
+Comparing the runtimes of QuickSort on the evil and random sequences, we see that it runs significantly slower in _O(n\*n)_ time for the evil sequences and much quicker for random sequences. 
