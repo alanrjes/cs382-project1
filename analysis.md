@@ -6,30 +6,42 @@ Group Members: Alan Jessup and Xinran Liu
 
 ### Performance on Random Sequences
 
-When comparing all three sorting algorithms on randomly generated sequences, Quick Sort performs best. It appears to increase steadily at the same rate as Merge Sort, which is in line with their theoretical runtime, since both are _O(n log n)_ runtime algorithms. Insertion Sort, being an _O(n\*n)_ runtime algorithm, increases at a much faster rate as the input size grows.
+When comparing all three sorting algorithms on randomly generated sequences, Quick Sort performs best. It appears to increase steadily at the same rate as Merge Sort, which is in line with their theoretical runtime, since both are _O(n log n)_ runtime algorithms.
 
-![Fig 1. Graph comparing each algorithm's performance sorting randomly generated sequences](https://github.com/alanrjes/cs382-project1/blob/master/graphs/random.png)
+![Fig 1. Graph of all algorithms' performance sorting randomly generated sequences](https://github.com/alanrjes/cs382-project1/blob/master/graphs/fig1.png)
+
+A moderate anomaly in the data appears when Merge Sort is compared against Insertion Sort, without running Quick Sort. In this case, Insertion Sort appears to outperform Merge Sort on small sequences, worsening as the input size grows.
+
+![Fig 2. Graph comparing Merge Sort and Insertion Sort's performance sorting randomly generated sequences](https://github.com/alanrjes/cs382-project1/blob/master/graphs/fig2.png)
+
+This anomaly may be due to Python's internal optimization processes allowing Merge Sort to benefit from the prior work done by Quick Sort.
 
 ### Performance on Ordered Sequences
 
-Insertion Sort and Merge Sort both perform well on ordered sequences, with Insertion Sort performing best on smaller sequences and Merge Sort better on sequences with a size greater than about 6,000 items. Quick Sort performs poorly, at its worst-case runtime of _O(n\*n)_.
+Similarly to the findings of Merge Sort and Insertion Sort's relative performance on random sequences, Insertion Sort perform best on small sequence sizes, but worse as the sequence size increases.
 
-![Fig 2. Graph comparing each algorithm's performance sorting ordered sequences](https://github.com/alanrjes/cs382-project1/blob/master/graphs/ordered.png)
+![Fig 3. Graph comparing Merge Sort and Insertion Sort's performance sorting ordered sequences](https://github.com/alanrjes/cs382-project1/blob/master/graphs/fig3.png)
 
-![Fig 3. Graph comparing Merge Sort and Quick Sort's performance sorting large ordered sequences](https://github.com/alanrjes/cs382-project1/blob/master/graphs/large-ordered.png)
+Because of Python's recursion depth limit, Quick Sort is not able to complete Ordered or Evil sequences larger than 1,000 items. For sequences of size less than 1,000, Quick Sort completes in its worst-case runtime, and is vastly outperformed by the other two algorithms.
+
+![Fig 4. Graph comparing Quicksort's performance sorting ordered sequences of a limited size](https://github.com/alanrjes/cs382-project1/blob/master/graphs/fig4.png)
 
 ### Performance on Evil Sequences
 
-On evil sequences, Merge Sort performs the best by far, since both Quick Sort and Insertion Sort are running at their theoretical worst-case runtime of _O(n\*n)_.
+Quicksort demonstrates the same worst-case runtime when tested on evil sequences as it does on ordered sequences.
 
-![Fig 4. Graph comparing each algorithm's performance sorting evil sequences](https://github.com/alanrjes/cs382-project1/blob/master/graphs/evil.png)
+![Fig 5. Graph of all algorithms' performance sorting evil sequences of a limited size](https://github.com/alanrjes/cs382-project1/blob/master/graphs/fig5.png)
+
+On larger evil sequences, Merge Sort performs far better than Insertion Sort. This is in line with the theoretical runtime of Insertion Sort, since evil sequences result in Insertion Sort's worst-case runtime of _O(n\*n)_.
+
+![Fig 6. Graph comparing Merge Sort and Insertion Sort's performance sorting evil sequences](https://github.com/alanrjes/cs382-project1/blob/master/graphs/fig6.png)
 
 ### Conclusions on Sorting Algorithm Comparisons
 
-Based on this data, Quick Sort appears to be the best choice for random sequences, but by far the worst choice for ordered and evil sequences. Merge Sort performs well all around, almost as well as Quick Sort on random sequences, and by far the best on evil sequences. Insertion sort performs well specifically on small ordered sequences, but in general is expected to perform poorly on larger data sets due to its _O(n\*n)_ runtime increasing more steeply than the _O(n log n)_ runtime of Merge Sort and Quick Sort.
+Based on this data, Quick Sort appears to be the best choice for random sequences, but by far the worst choice for ordered and evil sequences. Merge Sort performs well all around, almost as well as Quick Sort on random sequences, and is the best choice for evil sequences and for large ordered sequences. Insertion sort performs well on small random and ordered sequences, but poorly on larger data sets, due to its _O(n\*n)_ runtime increasing more steeply than the _O(n log n)_ runtime of Merge Sort and Quick Sort.
 
 ## Evidence for Evil Generator Runtime
 
-![Fig 5. Graph comparing Quick Sort's performance on Evil and Random Sequences](https://github.com/alanrjes/cs382-project1/blob/master/graphs/fig7.png)
+![Fig 7. Graph comparing Quick Sort's performance on Evil and Random Sequences](https://github.com/alanrjes/cs382-project1/blob/master/graphs/fig7.png)
 
-Comparing the runtimes of Quick Sort on the evil and random sequences, we see that it runs significantly slower in _O(n\*n)_ time for the evil sequences and much quicker for random sequences.
+Comparing the runtimes of QuickSort on the evil and random sequences, we see that it runs significantly slower on the evil sequences than on the random sequences. More specifically, we can fit a degree to polynomial and multiply with some constant $c = 1.6$ to create a upper bound of its runtime on evil sequences, so we claim that it runs in _O(n\*n)_ time.
