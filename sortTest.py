@@ -2,8 +2,9 @@ import argparse #documentation: https://docs.python.org/3/library/argparse.html
 import time
 import random
 import time
+import csv
 
-from quickSort import quick_sort,partition
+from quickSort import quick_sort
 from mergeSort import merge_sort
 from insertionSort import insertion_sort
 
@@ -28,6 +29,11 @@ parser.add_argument('--generator', '-g',
                     type=str.lower,
                     default = "random",
                     help="Specifies the input generator to use. Default is random."
+                    )
+
+parser.add_argument('--save', '-s',
+                    type=str.lower,
+                    help="Provide a filename to save the output as a .csv file."
                     )
 
 # parse command line arguments based on definitions
@@ -74,6 +80,12 @@ while (k <= args.sizeMax):
     results.append(resultK)
 
     k += args.sizeIncr
+
+if (args.save):
+    with open(args.save+'.csv', 'w') as f:
+        writer = csv.writer(f)
+        for row in results:
+            writer.writerow(row)
 
 # print summary nicely
 printstr = ""
